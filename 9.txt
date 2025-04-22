@@ -1,0 +1,43 @@
+Assignment No.: 9 
+Assignment Title: Write a Ruby Script to send an Email to a specific User. 
+
+Name :Syeda Imtiyaz                                                       PRN: 122B1B272        
+Class: TY                                                                               Division : D (D3) 
+—-------------------------------------------------------------------------------------------------
+CODE : 
+require 'mail' 
+# Set up SMTP settings securely 
+Mail.defaults do 
+delivery_method :smtp, { 
+address: 'smtp.gmail.com', 
+port: 587, 
+user_name: ENV['EMAIL_USER'], # Use environment variable password: ENV['EMAIL_PASS'], # Use environment variable authentication: :login, 
+enable_starttls_auto: true 
+} 
+end 
+# Define email message 
+message = Mail.new do 
+from ENV['EMAIL_USER'] 
+to 'syedaimtiyaz19@gmail.com' 
+subject 'Hello from Ruby!' 
+body 'This is a test email sent from Ruby.' 
+end 
+# Send email 
+Message.deliver!
+
+
+
+
+
+
+
+
+
+
+
+
+
+OUTPUT :
+
+
+
